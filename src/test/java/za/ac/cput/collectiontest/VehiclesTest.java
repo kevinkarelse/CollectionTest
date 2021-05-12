@@ -13,11 +13,13 @@ class VehiclesTest {
         Set<Vehicles> vehiclesSet = new HashSet<>();
         Map<Integer, Vehicles> vehiclesMap = new HashMap<>();
         for (int i = 0; i < 10; i++){
-            int id = 0001;
+            int id = i;
             Vehicles vehicles = new Vehicles(id);
             vehiclesList.add(vehicles);
             vehiclesSet.add(vehicles);
             vehiclesMap.put(id, vehicles);
+            System.out.println(id);
+
 
         }
         assertEquals(10, vehiclesList.size());
