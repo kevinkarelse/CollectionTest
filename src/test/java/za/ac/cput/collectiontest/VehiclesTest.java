@@ -15,16 +15,17 @@ class VehiclesTest {
         Map<Integer, Vehicles> vehiclesMap = new HashMap<>();
         for (int i = 0; i < 10; i++){
             int id = i;
-            Vehicles vehicles = new Vehicles(id);
+            String brand = "BMW";
+            Vehicles vehicles = new Vehicles(i,brand);
             vehiclesList.add(vehicles);
             vehiclesSet.add(vehicles);
             vehiclesMap.put(id, vehicles);
-            System.out.println(vehiclesList);
+
 
 
         }
         assertEquals(10, vehiclesList.size());
-        //assertEquals(10, vehiclesSet.size());
+        assertEquals(10, vehiclesSet.size());
         assertEquals(10, vehiclesMap.size());
     }
 
