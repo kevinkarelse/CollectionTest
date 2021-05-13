@@ -19,14 +19,15 @@ class VehiclesTest {
             vehiclesList.add(vehicles);
             vehiclesSet.add(vehicles);
             vehiclesMap.put(id, vehicles);
-            System.out.println(id);
+            System.out.println(vehiclesList);
 
 
         }
         assertEquals(10, vehiclesList.size());
-        assertEquals(10, vehiclesSet.size());
+        //assertEquals(10, vehiclesSet.size());
         assertEquals(10, vehiclesMap.size());
     }
+
 
     @Test
     //This tests using remove for collection
@@ -40,14 +41,15 @@ class VehiclesTest {
             vehiclesList.add(vehicles);
             vehiclesSet.add(vehicles);
             vehiclesMap.put(id, vehicles);
-            int idRemover = 1;
+
+            vehiclesMap.remove(2);
 
 
         }
 
-        assertEquals(10, vehiclesList.size());
-        assertEquals(10, vehiclesSet.size());
-        assertEquals(10, vehiclesMap.size());
+        //assertEquals(10, vehiclesList.size());
+        //assertEquals(10, vehiclesSet.size());
+        assertEquals(9, vehiclesMap.size());
     }
 
 }
