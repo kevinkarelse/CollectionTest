@@ -100,7 +100,9 @@ class VehiclesTest {
     @Test
         //This tests using remove for collection
     void findTest(){
-        boolean vehicleFinder;
+        int vehicleFinder = 1;
+        String found = "";
+
         List<Vehicles> vehiclesList = new ArrayList<>();
         Set<Vehicles> vehiclesSet = new HashSet<>();
         Map<Integer, Vehicles> vehiclesMap = new HashMap<>();
@@ -130,10 +132,16 @@ class VehiclesTest {
         vehiclesMap.put(5,v5);
 
 
+        if (vehicleFinder == v1.getId()){
+            found = v1.getBrand();
+
+        }else{
+            System.out.println("not there kid");
+        }
         //This tests if there is in fact 5 objects that matches each particular collection interfaces size.
-        assertEquals(5, vehiclesList.size());
-        assertEquals(5, vehiclesSet.size());
-        assertEquals(5, vehiclesMap.size());
+        assertEquals("Toyota", found);
+        //assertEquals(5, vehiclesSet.size());
+        //assertEquals(5, vehiclesMap.size());
         //If test passes it means add function was properly implemented
     }
 
