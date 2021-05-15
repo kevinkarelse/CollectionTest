@@ -98,10 +98,17 @@ class VehiclesTest {
 
 
     @Test
-        //This tests using remove for collection
+        //This tests if we are able to find the brand name using ID
     void findTest(){
-        int vehicleFinder = 1;
-        String found = "";
+        int vehicleListFinder = 1;
+        int vehicleSetFinder = 3;
+        int vehicleMapFinder = 5;
+        int vehicleCollectionFinder = 7;
+
+        String listFinder = "";
+        String setFinder = "";
+        String mapFinder = "";
+        String collectionFinder = "";
 
         List<Vehicles> vehiclesList = new ArrayList<>();
         Set<Vehicles> vehiclesSet = new HashSet<>();
@@ -112,37 +119,50 @@ class VehiclesTest {
         Vehicles v3 = new Vehicles(3,"Nissan");
         Vehicles v4 = new Vehicles(4,"Kia");
         Vehicles v5 = new Vehicles(5,"Porsche");
+        Vehicles v6 = new Vehicles(6,"Mercedes");
+        Vehicles v7 = new Vehicles(7,"Tesla");
+        Vehicles v8 = new Vehicles(8,"Honda");
 
         vehiclesList.add(v1);
         vehiclesList.add(v2);
-        vehiclesList.add(v3);
-        vehiclesList.add(v4);
-        vehiclesList.add(v5);
 
-        vehiclesSet.add(v1);
-        vehiclesSet.add(v2);
         vehiclesSet.add(v3);
         vehiclesSet.add(v4);
-        vehiclesSet.add(v5);
 
-        vehiclesMap.put(1,v1);
-        vehiclesMap.put(2,v2);
-        vehiclesMap.put(3,v3);
-        vehiclesMap.put(4,v4);
         vehiclesMap.put(5,v5);
+        vehiclesMap.put(6,v6);
 
 
-        if (vehicleFinder == v1.getId()){
-            found = v1.getBrand();
+        if (vehicleListFinder == v1.getId())
 
-        }else{
-            System.out.println("not there kid");
+            listFinder = v1.getBrand();
+        else{
+            System.out.println("Id does not match anything");
         }
-        //This tests if there is in fact 5 objects that matches each particular collection interfaces size.
-        assertEquals("Toyota", found);
-        //assertEquals(5, vehiclesSet.size());
-        //assertEquals(5, vehiclesMap.size());
-        //If test passes it means add function was properly implemented
+
+        if (vehicleSetFinder == v3.getId())
+
+            setFinder = v3.getBrand();
+        else{
+            System.out.println("Id does not match anything");
+        }
+
+        if (vehicleMapFinder == v5.getId())
+
+            mapFinder = v5.getBrand();
+        else{
+            System.out.println("Id does not match anything");
+        }
+        //This tests if it does find BMW from List where id = 1
+        assertEquals("BMW", listFinder);
+
+        //This tests if it does in fact find Nissan in the Set where id = 3
+        assertEquals("Nissan", setFinder);
+
+        //This tests if it does in fact find Porsche in the Map where id = 5
+        assertEquals("Porsche", mapFinder);
+
+
     }
 
 
