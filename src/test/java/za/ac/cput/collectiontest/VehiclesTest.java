@@ -46,10 +46,36 @@ class VehiclesTest {
             vehiclesSet.add(vehicles);
             vehiclesMap.put(id, vehicles);
 
-            vehiclesList.remove(1);
+
 
             vehiclesMap.remove(index);
-            System.out.println(vehiclesList);
+
+
+
+        }
+        vehiclesList.remove(2);
+
+        assertEquals(9, vehiclesList.size());
+        assertEquals(10, vehiclesSet.size());
+        assertEquals(9, vehiclesMap.size());
+    }
+    @Test
+        //This tests using remove for collection
+    void findTest(){
+        List<Vehicles> vehiclesList = new ArrayList<>();
+        Set<Vehicles> vehiclesSet = new HashSet<>();
+        Map<Integer, Vehicles> vehiclesMap = new HashMap<>();
+        for (int i = 0; i < 10; i++){
+            int id = i;
+            int index = 2;
+            String brand = "BMW" + i;
+            Vehicles vehicles = new Vehicles(id, brand);
+            vehiclesList.add(vehicles);
+            vehiclesSet.add(vehicles);
+            vehiclesMap.put(id, vehicles);
+
+
+
 
         }
 
@@ -57,5 +83,6 @@ class VehiclesTest {
         assertEquals(10, vehiclesSet.size());
         assertEquals(9, vehiclesMap.size());
     }
+
 
 }
