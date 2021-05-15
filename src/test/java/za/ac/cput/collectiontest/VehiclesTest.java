@@ -44,7 +44,7 @@ class VehiclesTest {
         assertEquals(5, vehiclesList.size());
         assertEquals(5, vehiclesSet.size());
         assertEquals(5, vehiclesMap.size());
-        //If test passes it means add function was properly implemented
+
     }
 
 
@@ -93,7 +93,7 @@ class VehiclesTest {
         assertEquals(4, vehiclesList.size());
         assertEquals(4, vehiclesSet.size());
         assertEquals(4, vehiclesMap.size());
-        //If test passes it means add function was properly implemented
+
     }
 
 
